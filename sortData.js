@@ -63,11 +63,13 @@ for(let i = 0; i < primary.length; i++){
         }
     }
     else{
-        createDateRef.add({date: format(parseISO(initial.createdAt), 'd-MMM-yyyy HH:mm:ss aa'),data: spaceData})
+        createDateRef.add({date: format(parseISO(initial.createdAt), 'd-MMM-yyyy HH:mm:ss aa'),...spaceData})
         initial = primary[i]
         spaceData = {}
         // console.log("BREAK >>",i," >>OUTPUT",createDateRef," >>")
         // break
     }
 }
-console.log(primary.length,createDateRef, ">>FINAL OUTPUT")
+const myArr = Array.from(createDateRef)
+console.log(primary.length,myArr, ">>FINAL OUTPUT")
+console.log(myArr[0]['space-lobby'].size)
